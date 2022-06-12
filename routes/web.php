@@ -27,23 +27,35 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name
 Route::namespace('App\Http\Controllers')->middleware('auth')->group(function () {
 
     //************************************************
-    //                  البروفايل 
+    //                  البروفايل
     //************************************************
-    // عرض صفحة البروفايل 
+    // عرض صفحة البروفايل
     route::get('profile', 'ProfileController@profil')->name('profile');
-    // تعديل بيانات الروفايل 
+    // تعديل بيانات الروفايل
     route::post('profile', 'ProfileController@profile_store')->name('profile.store');
 
     //************************************************
     //               الاعدادات العامة
     //************************************************
-    // عرض صفحة الاعدادات 
+    // عرض صفحة الاعدادات
     route::get('setting', 'SettingController@setting')->name('setting');
-    // تعديل  الاعدادات 
+    // تعديل  الاعدادات
     route::post('setting', 'SettingController@setting_store')->name('setting.store');
 
-    //************************************************
-    //               الاعدادات العامة
-    //************************************************
 
+
+    //************************************************
+    //                المراكز الطبية
+    //************************************************
+    Route::resource('medical_center', 'MedicalCenterController');
+
+    //************************************************
+    //                 المعامل
+    //************************************************
+    Route::resource('labs', 'LabController');
+
+    //************************************************
+    //                 الاطباء
+    //************************************************
+    Route::resource('doctors', 'DoctorController');
 });

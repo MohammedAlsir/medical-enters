@@ -35,5 +35,55 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
 
+     <script>
+    $("#example1").dataTable({
+        language: {
+            url: "//cdn.datatables.net/plug-ins/1.11.4/i18n/ar.json",
+        },
+    });
+    $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
 
-    
+        });
+    });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+
+        $('.show_confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `هل تريد حذف هذا السجل بالفعل ؟`,
+                text: "في حالة الموافقة لا يمكنك التراجع عن هذا الاجراء !",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                    ButtonColor: "#1cc88a",
+
+                buttons: [ 'إلغاء ','نعم , حذف السجل ']
+                //   buttons: [' ! نعم ,   حذف السجل ', 'إلغاء ']
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                form.submit();
+                }
+            });
+        });
+
+        $(document).ready(function() {
+                $('.select_2').select2();
+            });
+    </script>
+
+

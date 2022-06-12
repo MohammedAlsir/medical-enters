@@ -5,13 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lab extends Model
+class Workday extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'name',
-        'type',
-        'medical_center_id'
-    ];
 }
