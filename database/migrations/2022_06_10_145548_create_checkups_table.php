@@ -14,16 +14,25 @@ return new class extends Migration
     public function up()
     {
         Schema::create('checkups', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('ckeckup_name');
+            $table->string('ckeckup_price');
+            $table->string('ckeckup_time');
+
+            $table->bigInteger('doctor_id' , false ,true);
+            $table->foreign('doctor_id')->references('id')->on('doctors');
+
+            $table->bigInteger('patient_id' , false ,true);
+            $table->foreign('patient_id')->references('id')->on('patients');
+
+            $table->bigInteger('lab_id' , false ,true);
+            $table->foreign('lab_id')->references('id')->on('labs');
+
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('checkups');

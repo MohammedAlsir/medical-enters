@@ -12,17 +12,20 @@
                 <!-- Horizontal Form -->
                 <div class="card ">
                     <div class="card-header">
-                        <h3 class="card-title">إضافة طبيب جديد</h3>
+                        <h3 class="card-title">
+                        <img src="{{asset('uploads/medical_doctor.png')}}" class="image-title-card" alt="medical_doctor">
+                            إضافة طبيب جديد
+                        </h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form method="POST" action="{{route('doctors.store')}}" class="form-horizontal">
                         @csrf
-                        <div class="card-body">
+                        <div class="card-body custom-design">
 
                             <div class="form-group row">
-                                <label class="col-sm-2 control-label">اسم الطبيب </label>
-                                <div class="col-sm-10">
+                                <label class="col-md-3 col-sm-3 col-xs-4 control-label">اسم الطبيب </label>
+                                <div class="col-md-6 col-sm-9 col-xs-8">
                                     <input required type="text" class="form-control" name="name">
                                 </div>
                             </div>
@@ -36,15 +39,15 @@
                             </div> --}}
 
                             <div class="form-group row">
-                                <label class="col-sm-2 control-label">رقم الهاتف</label>
-                                <div class="col-sm-10">
+                                <label class="col-md-3 col-sm-3 col-xs-4 control-label">رقم الهاتف</label>
+                                <div class="col-md-6 col-sm-9 col-xs-8">
                                     <input required type="number" name="phone" class="form-control">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2 control-label">سعر الكشف</label>
-                                <div class="col-sm-10">
+                                <label class="col-md-3 col-sm-3 col-xs-4 control-label">سعر الكشف</label>
+                                <div class="col-md-6 col-sm-9 col-xs-8">
                                     <input required type="number" name="price" class="form-control">
                                 </div>
                             </div>
@@ -52,7 +55,10 @@
 
                                 <!-- /.card-body -->
                             <div class="card-footer" style="border-top: none; margin-bottom: 15px">
-                                <h4>ايام العمل </h4>
+                                <h6>
+                                    <i class="fa fa-calendar-alt fa-lg" style="color: #007bff;"></i>
+                                    <span>ايام العمل</span>
+                                 </h6>
                             </div>
 
                             {{-- السبت --}}
@@ -161,8 +167,12 @@
                             {{-- <input  type="hidden" name="medical_center_id" value="{{Auth::user()->id}}"> --}}
 
                             <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-block btn-info">اضافة</button>
+                            <div class="form-group row">
+                                 <div class="col-md-3 col-sm-3 col-xs-4"></div>
+                                <button type="submit" class="btn btn-block btn-info col-md-6 col-sm-9 col-xs-8">
+                                    <span>إضـــافة</span>
+                                    <i class="fa fa-send"></i>
+                                </button>
                             </div>
                             <!-- /.card-footer -->
                     </form>
