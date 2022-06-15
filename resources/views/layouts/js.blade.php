@@ -58,7 +58,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
     <script type="text/javascript">
-
         $('.show_confirm').click(function(event) {
             var form =  $(this).closest("form");
             var name = $(this).data("name");
@@ -69,8 +68,7 @@
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
-                    ButtonColor: "#1cc88a",
-
+                ButtonColor: "#1cc88a",
                 buttons: [ 'إلغاء ','نعم , حذف السجل ']
                 //   buttons: [' ! نعم ,   حذف السجل ', 'إلغاء ']
             })

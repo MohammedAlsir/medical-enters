@@ -14,9 +14,9 @@
         @include('layouts.sideBar')
 
         <!-- Content Wrapper. Contains page content -->
-        
+
         <div class="content-wrapper">
-            
+
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
@@ -41,7 +41,7 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-           @yield('content')
+        @yield('content')
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->

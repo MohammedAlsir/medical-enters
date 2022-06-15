@@ -38,7 +38,11 @@ class LabController extends Controller
      */
     public function store(LabRequest $request)
     {
-        return $this->store_data(Lab::class, $request, 'labs.index', 'تم إضافة المعمل');
+        if (isset($request)) {
+            return $this->store_data(Lab::class, $request, 'labs.index', 'تم إضافة المعمل');
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
