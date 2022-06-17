@@ -10,32 +10,20 @@ use Illuminate\Http\Request;
 class DoctorController extends Controller
 {
     use Oprations;
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    // == Funcion Return Doctors View ==
     public function index()
     {
         return $this->index_data(Doctor::class, 'doctors.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // == Funcion Create Doctor  ==
     public function create()
     {
         return $this->create_date('doctors.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // == Funcion Store New Doctor  ==
     public function store(Request $request)
     {
         $this->validate($request, array(
@@ -65,23 +53,13 @@ class DoctorController extends Controller
         return redirect()->route('doctors.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     // == Funcion Return  Doctor View Edit ==
     public function edit($id)
     {
         $st     = Workday::where('doctor_id', $id);
@@ -105,13 +83,7 @@ class DoctorController extends Controller
         ));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // == Funcion Update Doctor Data  ==
     public function update(Request $request, $id)
     {
         $this->validate($request, array(
@@ -143,12 +115,7 @@ class DoctorController extends Controller
         return redirect()->route('doctors.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     // == Funcion Delete Doctor ==
     public function destroy($id)
     {
         //

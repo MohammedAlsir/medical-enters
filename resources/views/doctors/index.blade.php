@@ -12,7 +12,10 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title"> كل  الاطباء</h3>
+                    <h3 class="card-title">
+                        <img src="{{asset('uploads/medical_doctor.png')}}" class="image-title-card" alt="medical_doctor">
+                         كل  الاطباء
+                    </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -40,9 +43,13 @@
                                             {{ csrf_field()}}
                                             {{ method_field('delete') }}
                                             <a href="{{route('doctors.edit',$item->id)}}" class="btn btn-primary">
-                                                تعديل</a>
+                                                <span>تعديل</span>
+                                                <i class="fa fa-refresh"></i>
+                                            </a>
                                             <button type="button" class="show_confirm  btn btn-danger"></i>&nbsp;
-                                                حذف</button>
+                                                <span>حذف</span>
+                                                <i class="fa fa-trash"></i>
+                                            </button>
                                         </form>
                                     </div>
                                 </td>

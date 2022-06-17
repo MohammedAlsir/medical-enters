@@ -14,7 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+
+            $table->bigInteger('doctor_id', false, true);
+            $table->foreign('doctor_id')->references('id')->on('doctors');
+
+            $table->bigInteger('patient_id', false, true);
+            $table->foreign('patient_id')->references('id')->on('patients');
+
+            $table->bigInteger('medical_center_id', false, true);
+            $table->foreign('medical_center_id')->references('id')->on('medical_centers');
+
             $table->timestamps();
         });
     }

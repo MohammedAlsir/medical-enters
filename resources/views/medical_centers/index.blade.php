@@ -13,11 +13,14 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title"> كل المراكز الطبية</h3>
+                    <h3 class="card-title">
+                    <img src="{{asset('uploads/location.png')}}" class="image-title-card" alt="medical-center-location">
+                         كل المراكز الطبية
+                    </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                    <table id="example1" class="table  table-striped">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -40,9 +43,13 @@
                                             {{ csrf_field()}}
                                             {{ method_field('delete') }}
                                             <a href="{{route('medical_center.edit',$item->id)}}" class="btn btn-primary">
-                                                تعديل</a>
+                                                <span>تعديل</span>
+                                                <i class="fa fa-refresh"></i>
+                                            </a>
                                             <button type="button" class="show_confirm  btn btn-danger"></i>&nbsp;
-                                                حذف</button>
+                                                <span>حذف</span>
+                                                <i class="fa fa-trash"></i>
+                                            </button>
                                         </form>
                                     </div>
                                 </td>

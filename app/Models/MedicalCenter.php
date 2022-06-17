@@ -13,4 +13,9 @@ class MedicalCenter extends Model
         'name',
         'address',
     ];
+
+    public function Spleciale_Fun_Relation()
+    {
+        return $this->hasMany('App\Models\Specialtie' ,'medical_center_id');
+    }
 }

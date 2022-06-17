@@ -61,4 +61,20 @@ Route::namespace('App\Http\Controllers')->middleware('auth')->group(function () 
     //************************************************
 
     Route::resource('doctors', 'DoctorController');
+
+
+    //************************************************
+    //                 التخصصات
+    //************************************************
+    Route::resource('specialtie', 'SpecialtieController');
+
+    //************************************************
+    //                 الحجوزات
+    //************************************************
+    Route::resource('reservations', 'ReservationController');
+
+    //************************************************
+    //                 الفحوضات
+    //************************************************
+    Route::resource('checkupes', 'CheckupController');
 });
