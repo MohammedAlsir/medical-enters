@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('price');
+            $table->foreignId('specialtie_id')->constrained('specialties');
+            $table->foreignId('medical_center_id')->constrained('medical_centers');
             $table->timestamps();
         });
     }

@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "974e6163-b087-4708-b9c6-2d766e52a582",
+		"name": "Medical Center",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Mohammed Alsir",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "Mohammed@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "default"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456789",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "Mohammed@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all medical centers",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true,
+					"host": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjcyM2I4Zjg0M2RiNTdmM2U0ODUwNjE5ZmQyNjE0NGIzMTA2OGJmYTQ0MmZhNGZhYmIxNjA5OWNhMWZhMGE4Y2JmMzdjMzkyNzgxNjZkODIiLCJpYXQiOjE2NTU2NTA0NzYuNzUzMDE0LCJuYmYiOjE2NTU2NTA0NzYuNzUzMDM0LCJleHAiOjE2ODcxODY0NzYuNjM1ODgyLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ElqxNyRffaV7bgT9EzNnVWXALDAcYT5sbQGhOd5hzVxt9MLpE4N51ez23jtZotnRaBpLdqrSCnSG5jxvxvPIjgAm7nlUSS40XR_h00WNzegOOWGrNaQ51KUUeZ8FFHo7zhBReU2sl3QpFIEBeyaR3nMbxkRFMoKHK6ITA1I5hHUU_eG6HcuelFyDX_rV8xh5Xhe_nDDNB9Y_kzlVt32qj7k7XgQ-_uemkRM8O38PfKUNrFB1to1joekaHh5cb6IQxyesa1POqOJaGKTnXDLWVNba7s1WTuDp9DZVr_PS_L8puAB4SPPKVMKK0rtEV2HOSR8loZtcHWq8Z2E3oV4VMtqQO0KSbVbPtlfMhR2Gu2A4DLYZQikFjU-C95efN_XlKH67NMDTkxTQGZZm6pz5XuXTC9wv-Il6uqXmLBnuf4pMHEiDDfGAuZ7tKi5NvE6TjzeAbzbjtG4sM83Mof0sAl3R2LSnpEa-l7WXAy2ygXXg4UWNKIoVQK2lL49xA-awZMpShuCri5nbC0qa2i-hciQkpgzaByl2rSOUYM4fom8RUN1Amzxas5AHHgrteMcZvHxn3hMRjwlIt9nAYww8yMtyS5JvWWRA9XxAGFyjjOsmMyek_UhS0sJwz1tgKZrGwBluGY7YPTicVBetQV4XHdot6KkeT9t7oqWgjTu0Ub0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/medicalcenters",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"medicalcenters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all Specialties",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjcyM2I4Zjg0M2RiNTdmM2U0ODUwNjE5ZmQyNjE0NGIzMTA2OGJmYTQ0MmZhNGZhYmIxNjA5OWNhMWZhMGE4Y2JmMzdjMzkyNzgxNjZkODIiLCJpYXQiOjE2NTU2NTA0NzYuNzUzMDE0LCJuYmYiOjE2NTU2NTA0NzYuNzUzMDM0LCJleHAiOjE2ODcxODY0NzYuNjM1ODgyLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ElqxNyRffaV7bgT9EzNnVWXALDAcYT5sbQGhOd5hzVxt9MLpE4N51ez23jtZotnRaBpLdqrSCnSG5jxvxvPIjgAm7nlUSS40XR_h00WNzegOOWGrNaQ51KUUeZ8FFHo7zhBReU2sl3QpFIEBeyaR3nMbxkRFMoKHK6ITA1I5hHUU_eG6HcuelFyDX_rV8xh5Xhe_nDDNB9Y_kzlVt32qj7k7XgQ-_uemkRM8O38PfKUNrFB1to1joekaHh5cb6IQxyesa1POqOJaGKTnXDLWVNba7s1WTuDp9DZVr_PS_L8puAB4SPPKVMKK0rtEV2HOSR8loZtcHWq8Z2E3oV4VMtqQO0KSbVbPtlfMhR2Gu2A4DLYZQikFjU-C95efN_XlKH67NMDTkxTQGZZm6pz5XuXTC9wv-Il6uqXmLBnuf4pMHEiDDfGAuZ7tKi5NvE6TjzeAbzbjtG4sM83Mof0sAl3R2LSnpEa-l7WXAy2ygXXg4UWNKIoVQK2lL49xA-awZMpShuCri5nbC0qa2i-hciQkpgzaByl2rSOUYM4fom8RUN1Amzxas5AHHgrteMcZvHxn3hMRjwlIt9nAYww8yMtyS5JvWWRA9XxAGFyjjOsmMyek_UhS0sJwz1tgKZrGwBluGY7YPTicVBetQV4XHdot6KkeT9t7oqWgjTu0Ub0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/specialties",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"specialties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all Doctors by medical id & specialties id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjcyM2I4Zjg0M2RiNTdmM2U0ODUwNjE5ZmQyNjE0NGIzMTA2OGJmYTQ0MmZhNGZhYmIxNjA5OWNhMWZhMGE4Y2JmMzdjMzkyNzgxNjZkODIiLCJpYXQiOjE2NTU2NTA0NzYuNzUzMDE0LCJuYmYiOjE2NTU2NTA0NzYuNzUzMDM0LCJleHAiOjE2ODcxODY0NzYuNjM1ODgyLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.ElqxNyRffaV7bgT9EzNnVWXALDAcYT5sbQGhOd5hzVxt9MLpE4N51ez23jtZotnRaBpLdqrSCnSG5jxvxvPIjgAm7nlUSS40XR_h00WNzegOOWGrNaQ51KUUeZ8FFHo7zhBReU2sl3QpFIEBeyaR3nMbxkRFMoKHK6ITA1I5hHUU_eG6HcuelFyDX_rV8xh5Xhe_nDDNB9Y_kzlVt32qj7k7XgQ-_uemkRM8O38PfKUNrFB1to1joekaHh5cb6IQxyesa1POqOJaGKTnXDLWVNba7s1WTuDp9DZVr_PS_L8puAB4SPPKVMKK0rtEV2HOSR8loZtcHWq8Z2E3oV4VMtqQO0KSbVbPtlfMhR2Gu2A4DLYZQikFjU-C95efN_XlKH67NMDTkxTQGZZm6pz5XuXTC9wv-Il6uqXmLBnuf4pMHEiDDfGAuZ7tKi5NvE6TjzeAbzbjtG4sM83Mof0sAl3R2LSnpEa-l7WXAy2ygXXg4UWNKIoVQK2lL49xA-awZMpShuCri5nbC0qa2i-hciQkpgzaByl2rSOUYM4fom8RUN1Amzxas5AHHgrteMcZvHxn3hMRjwlIt9nAYww8yMtyS5JvWWRA9XxAGFyjjOsmMyek_UhS0sJwz1tgKZrGwBluGY7YPTicVBetQV4XHdot6KkeT9t7oqWgjTu0Ub0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "medical_center_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "specialtie_id",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/doctors",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

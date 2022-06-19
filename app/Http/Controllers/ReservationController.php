@@ -38,13 +38,13 @@ class ReservationController extends Controller
         $labs = Lab::select('id', 'name')->get();
         $doctors = Doctor::select('id', 'name')->get();
         $medical_centers = MedicalCenter::select('id', 'name')->get();
-        return view('PagesReservation.create', compact('doctors' ,'medical_centers'));
+        return view('PagesReservation.create', compact('doctors', 'medical_centers'));
     }
 
     // == Funcion Store New Reservation  ==
     public function store(Request $request)
     {
-          if (isset($request))
+        if (isset($request))
             return $this->store_data(Reservation::class, $request, 'reservations.create', 'تم إضافة الحجز بنجاح ');
     }
 
@@ -57,9 +57,9 @@ class ReservationController extends Controller
     // == Funcion Return  Reservation Edit View ==
     public function edit($reservation_id)
     {
-         if (isset($reservation_id)) {
+        if (isset($reservation_id)) {
 
-            $reservation= Reservation::with([
+            $reservation = Reservation::with([
                 'Doctor_Fun_Relation' => function ($select) {
                     $select->select('id', 'name', 'id');
                 },
@@ -68,8 +68,8 @@ class ReservationController extends Controller
                 }
             ])->find($reservation_id);
 
-              $doctors = Doctor::select('id', 'name')->get();
-              $medical_centers = MedicalCenter::select('id', 'name')->get();
+            $doctors = Doctor::select('id', 'name')->get();
+            $medical_centers = MedicalCenter::select('id', 'name')->get();
 
             return view('PagesReservation.edit', compact('reservation', 'medical_centers', 'doctors'));
         }
@@ -78,14 +78,14 @@ class ReservationController extends Controller
     // == Funcion Update  Reservation Data ==
     public function update(Request $request, $reservation_id)
     {
-          if(isset($reservation_id) &&  isset($request)){
+        if (isset($reservation_id) &&  isset($request)) {
             return $this->update_data(Reservation::class, $request, $reservation_id, 'reservations.index', 'تم تحديث بيانات الحجز بنجاح');
-         }
+        }
     }
 
-     // == Funcion Delete Reservation  ==
+    // == Funcion Delete Reservation  ==
     public function destroy($reservation_id)
     {
         return $this->delete_data(Reservation::class, $reservation_id, 'reservations.index', 'تم حذف الحجز  ');
-   }
+    }
 }

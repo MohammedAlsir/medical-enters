@@ -13,7 +13,7 @@
                     <div class="card-header">
                         <h3 class="card-title">
                         <img src="{{asset('uploads/medical_doctor.png')}}" class="image-title-card" alt="medical_doctor">
-                            تعديل بيانات المعمل
+                            تعديل بيانات الطبيب
                         </h3>
                     </div>
                     <!-- /.card-header -->
@@ -31,12 +31,29 @@
                             </div>
 
 
-                            {{-- <div class="form-group row">
+                            <div class="form-group row">
+                                <label class="col-md-3 col-sm-3 col-xs-4 control-label">المركز الطبي</label>
+                                <div class="col-md-6 col-sm-9 col-xs-8">
+                                    <select required name="medical_center_id"  class="form-control">
+                                        <option value="">اختر المركز الطبي</option>
+                                        @foreach ($medical_centers as $medical)
+                                            <option {{$medical->id == $item->medical_center_id ? 'selected':''}} value="{{$medical->id}}">{{$medical->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label class="col-md-3 col-sm-3 col-xs-4 control-label">التخصص</label>
                                 <div class="col-md-6 col-sm-9 col-xs-8">
-                                    <input required type="text" name="type" class="form-control">
+                                    <select required name="specialtie_id"  class="form-control">
+                                        <option value="">اختر التخصص</option>
+                                        @foreach ($specialties as $specialtie)
+                                            <option {{$specialtie->id == $item->specialtie_id ? 'selected':''}} value="{{$specialtie->id}}">{{$specialtie->specialtie_name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             <div class="form-group row">
                                 <label class="col-md-3 col-sm-3 col-xs-4 control-label">رقم الهاتف</label>

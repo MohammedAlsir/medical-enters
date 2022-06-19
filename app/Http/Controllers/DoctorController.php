@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
+use App\Models\MedicalCenter;
+use App\Models\Specialtie;
 use App\Models\Workday;
 use App\Traits\Oprations;
 use Illuminate\Http\Request;
@@ -20,7 +22,9 @@ class DoctorController extends Controller
     // == Funcion Create Doctor  ==
     public function create()
     {
-        return $this->create_date('doctors.create');
+        $specialties     = Specialtie::all();
+        $medical_centers = MedicalCenter::all();
+        return view('doctors.create', compact('specialties', 'medical_centers'));
     }
 
     // == Funcion Store New Doctor  ==
@@ -36,6 +40,9 @@ class DoctorController extends Controller
         $doctor->name = $request->name;
         $doctor->phone = $request->phone;
         $doctor->price = $request->price;
+        $doctor->specialtie_id = $request->specialtie_id;
+        $doctor->medical_center_id = $request->medical_center_id;
+
         $doctor->save();
         // حفظ ايام العمل
         foreach ($request->day as $index => $day) {
@@ -59,7 +66,7 @@ class DoctorController extends Controller
         //
     }
 
-     // == Funcion Return  Doctor View Edit ==
+    // == Funcion Return  Doctor View Edit ==
     public function edit($id)
     {
         $st     = Workday::where('doctor_id', $id);
@@ -71,6 +78,8 @@ class DoctorController extends Controller
         $fri    = Workday::where('doctor_id', $id);
 
         $item = Doctor::find($id);
+        $specialties     = Specialtie::all();
+        $medical_centers = MedicalCenter::all();
         return view('doctors.edit', compact(
             'item',
             'st',
@@ -80,6 +89,8 @@ class DoctorController extends Controller
             'wed',
             'thu',
             'fri',
+            'specialties',
+            'medical_centers'
         ));
     }
 
@@ -96,6 +107,8 @@ class DoctorController extends Controller
         $doctor->name = $request->name;
         $doctor->phone = $request->phone;
         $doctor->price = $request->price;
+        $doctor->specialtie_id = $request->specialtie_id;
+        $doctor->medical_center_id = $request->medical_center_id;
         $doctor->save();
         // حذف كل الايام السابقة
         Workday::where('doctor_id', $id)->delete();
@@ -115,7 +128,7 @@ class DoctorController extends Controller
         return redirect()->route('doctors.index');
     }
 
-     // == Funcion Delete Doctor ==
+    // == Funcion Delete Doctor ==
     public function destroy($id)
     {
         //

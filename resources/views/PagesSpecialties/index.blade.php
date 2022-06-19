@@ -24,7 +24,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>اسم التخصص </th>
-                                <th>اسم المركز </th>
+                                {{-- <th>اسم المركز </th> --}}
                                 <th>العمليات</th>
                             </tr>
                         </thead>
@@ -33,7 +33,7 @@
                             <tr >
                                 <td>{{$index++}}</td>
                                 <td>{{$speciale->specialtie_name}}</td>
-                                <td>{{$speciale->MedicalCenter_Fun_Relation->name}}</td>
+                                {{-- <td>{{$speciale->MedicalCenter_Fun_Relation->name}}</td> --}}
 
                                 <td>
                                     <div>

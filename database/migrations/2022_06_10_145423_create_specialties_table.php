@@ -12,8 +12,8 @@ return new class extends Migration
         Schema::create('specialties', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('specialtie_name');
-            $table->bigInteger('medical_center_id' , false ,true);
-            $table->foreign('medical_center_id')->references('id')->on('medical_centers');
+            // $table->bigInteger('medical_center_id' , false ,true);
+            // $table->foreign('medical_center_id')->references('id')->on('medical_centers');
             $table->timestamps();
         });
     }

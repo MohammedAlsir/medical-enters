@@ -33,7 +33,7 @@
                             </div>
 
                             {{-- == Select Medical Center == --}}
-                            <div class="form-group row">
+                            {{-- <div class="form-group row">
                                 <label class="col-md-3 col-sm-3 col-xs-4 control-label">المركز الطبي  </label>
                                 <div class="col-md-6 col-sm-9 col-xs-8">
                                      <select name="medical_center_id" id="" class="form-control" required>
@@ -44,7 +44,7 @@
                                          @endforeach
                                      </select>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- == Submit Botton == --}}
                               <div class="form-group row">

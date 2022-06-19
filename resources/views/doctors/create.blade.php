@@ -30,13 +30,29 @@
                                 </div>
                             </div>
 
-
-                            {{-- <div class="form-group row">
-                                <label class="col-sm-2 control-label">التخصص</label>
-                                <div class="col-sm-10">
-                                    <input required type="text" name="type" class="form-control">
+                            <div class="form-group row">
+                                <label class="col-md-3 col-sm-3 col-xs-4 control-label">المركز الطبي</label>
+                                <div class="col-md-6 col-sm-9 col-xs-8">
+                                    <select required name="medical_center_id"  class="form-control">
+                                        <option value="">اختر المركز الطبي</option>
+                                        @foreach ($medical_centers as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            </div> --}}
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-3 col-sm-3 col-xs-4 control-label">التخصص</label>
+                                <div class="col-md-6 col-sm-9 col-xs-8">
+                                    <select required name="specialtie_id"  class="form-control">
+                                        <option value="">اختر التخصص</option>
+                                        @foreach ($specialties as $item)
+                                            <option value="{{$item->id}}">{{$item->specialtie_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
 
                             <div class="form-group row">
                                 <label class="col-md-3 col-sm-3 col-xs-4 control-label">رقم الهاتف</label>

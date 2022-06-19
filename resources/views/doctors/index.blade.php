@@ -24,6 +24,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>اسم الطبيب </th>
+                                <th>المركز الطبي</th>
                                 <th>التخصص</th>
                                 <th>رقم الهاتف </th>
                                 <th>العمليات</th>
@@ -34,7 +35,8 @@
                             <tr>
                                 <td>{{$index++}}</td>
                                 <td>{{$item->name}}</td>
-                                <td>{{$item->type}}</td>
+                                <td>{{$item->Medical->name}}</td>
+                                <td>{{$item->Specialtie->specialtie_name}}</td>
                                 <td>{{$item->phone}}</td>
 
                                 <td>

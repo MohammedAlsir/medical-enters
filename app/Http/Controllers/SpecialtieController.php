@@ -16,9 +16,11 @@ class SpecialtieController extends Controller
     // == Funcion Return Specialtie View ==
     public function index()
     {
-        $specialties = Specialtie::orderBy('id', 'DESC')->with(['MedicalCenter_Fun_Relation' => function ($select) {
-            $select->select('id', 'name', 'id');
-        }])->get();
+        // $specialties = Specialtie::orderBy('id', 'DESC')->with(['MedicalCenter_Fun_Relation' => function ($select) {
+        //     $select->select('id', 'name', 'id');
+        // }])->get();
+
+        $specialties = Specialtie::orderBy('id', 'DESC')->get();
 
         $index = 1;
         return view('PagesSpecialties.index', compact('specialties', 'index'));
@@ -27,8 +29,8 @@ class SpecialtieController extends Controller
     // == Funcion Create  Specialtie  ==
     public function create()
     {
-        $medical_centers = MedicalCenter::select('id', 'name')->get();
-        return view('PagesSpecialties.create', compact('medical_centers'));
+        // $medical_centers = MedicalCenter::select('id', 'name')->get();
+        return view('PagesSpecialties.create');
     }
 
     // == Funcion Store New Specialtie  ==
@@ -65,10 +67,9 @@ class SpecialtieController extends Controller
     // == Funcion Update  Specialtie Data ==
     public function update(Request $request, $specialtie_id)
     {
-         if(isset($specialtie_id) &&  isset($request)){
+        if (isset($specialtie_id) &&  isset($request)) {
             return $this->update_data(Specialtie::class, $request, $specialtie_id, 'specialtie.index', 'تم تحديث بيانات التخصص بنجاح');
-         }
-
+        }
     }
 
     // == Funcion Delete Specialtie  ==

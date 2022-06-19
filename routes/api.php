@@ -14,8 +14,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api', 'middleware' => 'json.response'], function () {
-    Route::post('login', 'TestController@login');
-    Route::post('re', 'TestController@register');
+    == Notes 'Api v1 ' ==
+
+    == json.response middleware ==> for put  'Accept', 'application/json'  in header request ==
+*/
+
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], function () {
+
+    Route::post('register', 'AuthController@register'); // == Register ==
+    Route::post('login', 'AuthController@login'); // == Login ==
+
+    // == This routes user must be logged in ==
+    Route::group(['middleware' => ['auth:api']], function () {
+        // == Begin Route Hospital  ==
+        Route::get('medicalcenters', 'GetOprationController@getMedicalCenters');
+        // == end Route Hospital  ==
+
+        // == Begin Route Specialtie  ==
+        Route::get('specialties', 'GetOprationController@getSpecialties');
+        // == end Route Specialtie  ==
+
+        // == Begin Route Doctor  ==
+        Route::post('doctors', 'GetOprationController@getDoctors');
+        // == end Route Doctor  ==
+
+
+    });
 });
