@@ -28,6 +28,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
 
     // == This routes user must be logged in ==
     Route::group(['middleware' => ['auth:api']], function () {
+
         // == Begin Route Hospital  ==
         Route::get('medicalcenters', 'GetOprationController@getMedicalCenters');
         // == end Route Hospital  ==
@@ -39,6 +40,18 @@ Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api'], func
         // == Begin Route Doctor  ==
         Route::post('doctors', 'GetOprationController@getDoctors');
         // == end Route Doctor  ==
+
+        // == end GetOprationController  ==
+        // ===================================
+        // == start PostOprationController  ==
+
+        // == Begin Route Profile  ==
+        Route::post('profile', 'PostOprationController@profile');
+        // == end Route Profile  ==
+
+        // == Begin Route reservations  ==
+        Route::post('reservations', 'PostOprationController@reservations');
+        // == end Route reservations  ==
 
 
     });
